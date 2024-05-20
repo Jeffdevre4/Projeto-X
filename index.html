@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto X</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-section {
+            padding: 20px;
+            width: 60%;
+            text-align: left;
+            position: relative;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+            z-index: -1;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: transparent;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .form-campo {
+            margin-bottom: 15px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-campo label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            margin-left: 5px;
+        }
+
+        .form-campo input, .form-campo textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-left: 10px;
+        }
+
+        .form-campo input:focus, .form-campo textarea:focus {
+            border-color: #cc2366;
+            outline: none;
+        }
+
+        .form-campo i {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #cc2366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e6683c;
+        }
+
+        .balloons-section {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .balloon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes balloonChange {
+            0%, 100% { background-image: url('https://i.pinimg.com/originals/9d/73/d0/9d73d089a72a0f2dc893c2f63561d779.gif'); }
+            33% { background-image: url('https://i.gifer.com/ApKp.gif'); }
+            66% { background-image: url('https://i.gifer.com/7UuB.gif'); }
+        }
+
+        .balloon:nth-child(1) {
+            animation: balloonChange 3.9s linear infinite;
+        }
+
+        .balloon:nth-child(2) {
+            animation: balloonChange 3.9s linear infinite 1.3s;
+        }
+
+        .balloon:nth-child(3) {
+            animation: balloonChange 3.9s linear infinite 2.6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="form-section">
+            <h2>Projeto X</h2>
+            <form id="contactForm">
+                <div class="form-campo">
+                    <i class="fas fa-user"></i>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="form-campo">
+                    <i class="fas fa-phone"></i>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                <div class="form-campo">
+                    <i class="fas fa-envelope"></i>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-campo">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep">
+                </div>
+                <div class="form-campo">
+                    <i class="fas fa-car"></i>
+                    <label for="veiculo-interesse">Veículo de interesse:</label>
+                    <input type="text" id="veiculo-interesse" name="veiculoDeInteresse">
+                </div>
+                <div class="form-campo">
+                    <i class="fas fa-comment"></i>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <div class="balloons-section">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6-beta.29/jquery.inputmask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#telefone").inputmask("(99) 99999-9999");
+            $("#cep").inputmask("99999-999");
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            var cepInput = document.getElementById('cep');
+            if (cepInput.value.length !== 9) {
+                alert('O CEP deve estar no formato 99999-999.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
